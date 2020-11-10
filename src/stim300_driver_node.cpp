@@ -60,6 +60,7 @@ int main(int argc, char** argv)
 
     if (driver_stim300.processPacket())
     {
+      // ROS_INFO("in processPacket()");
       if (!driver_stim300.isChecksumGood())
       {
         ROS_WARN("stim300 CRC error ");
@@ -81,6 +82,7 @@ int main(int argc, char** argv)
       imuSensorPublisher.publish(stim300msg);
 
     }
+    // ROS_INFO("No packet");
 
     loop_rate.sleep();
 

@@ -13,11 +13,11 @@ class DriverStim300
 {
 public:
   DriverStim300(SerialDriver& serial_driver,
-                stim_300::DatagramIdentifier datagram_id = stim_300::DatagramIdentifier::RATE_ACC_INCL_TEMP_AUX,
+                stim_300::DatagramIdentifier datagram_id = stim_300::DatagramIdentifier::RATE_ACC_INCL,
                 stim_300::GyroOutputUnit gyro_output_unit = stim_300::GyroOutputUnit::ANGULAR_RATE,
                 stim_300::AccOutputUnit acc_output_unit = stim_300::AccOutputUnit::ACCELERATION,
                 stim_300::InclOutputUnit incl_output_unit = stim_300::InclOutputUnit::ACCELERATION,
-                SerialDriver::BAUDRATE baudrate = SerialDriver::BAUDRATE::BAUD_921600,
+                SerialDriver::BAUDRATE baudrate = SerialDriver::BAUDRATE::BAUD_460800,
                 uint16_t serial_read_timeout_ms = 1);
   ~DriverStim300();
   double getAccX() const;

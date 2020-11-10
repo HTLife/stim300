@@ -13,6 +13,7 @@ public:
     BAUD_38400 = 38400,
     BAUD_57600 = 57600,
     BAUD_115200 = 115200,
+    BAUD_460800 = 460800,
     BAUD_921600 = 921600
   };
   virtual void open(BAUDRATE baudrate) = 0;

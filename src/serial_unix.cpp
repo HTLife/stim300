@@ -95,12 +95,16 @@ void SerialUnix::open(BAUDRATE baudrate)
     case BAUDRATE::BAUD_57600:  // 57600:
       failure = (cfsetispeed(&config_, B57600) < 0 || cfsetospeed(&config_, B57600) < 0);
       break;
+    case BAUDRATE::BAUD_460800:  // 460800:
+      failure = (cfsetispeed(&config_, B460800) < 0 || cfsetospeed(&config_, B460800) < 0);
+      break;
     case BAUDRATE::BAUD_921600:  // 921600:
       failure = (cfsetispeed(&config_, B921600) < 0 || cfsetospeed(&config_, B921600) < 0);
       break;
     default:
       failure = true;
   }
+
   if (failure)
   {
     throw std::runtime_error{ "Could not set baudrate" };
