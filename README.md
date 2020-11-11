@@ -3,6 +3,17 @@
 # STIM 300
 https://www.sensonor.com/products/inertial-measurement-units/stim300/
 
+lsusb
+```
+Bus 001 Device 013: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC
+```
+
+/lib/udev/rules.d/99-custom.rules
+```
+SUBSYSTEM=="tty" ATTRS{idVendor}=="0403" ATTRS{idProduct}=="6001" ACTION=="add", GROUP=dialout, MODE="0660" SYMLINK+="ttySTIM"
+```
+
+
 Run with:
 
     rosrun driver_stim300 stim300_driver_node
