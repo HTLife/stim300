@@ -8,7 +8,7 @@ lsusb
 Bus 001 Device 013: ID 0403:6001 Future Technology Devices International, Ltd FT232 USB-Serial (UART) IC
 ```
 
-/lib/udev/rules.d/99-custom.rules
+/etc/udev/rules.d/99-custom.rules 
 ```
 SUBSYSTEM=="tty" ATTRS{idVendor}=="0403" ATTRS{idProduct}=="6001" ACTION=="add", GROUP=dialout, MODE="0660" SYMLINK+="ttySTIM"
 ```
