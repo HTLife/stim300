@@ -73,16 +73,15 @@ int main(int argc, char** argv)
         continue;
       }
 
-      stim300msg.linear_acceleration.x = driver_stim300.getAccX() + 0.0023;
-      stim300msg.linear_acceleration.y = driver_stim300.getAccY() + 0.05;
-      stim300msg.linear_acceleration.z = driver_stim300.getAccZ() + 0.027;
+      stim300msg.linear_acceleration.x = driver_stim300.getAccX();
+      stim300msg.linear_acceleration.y = driver_stim300.getAccY();
+      stim300msg.linear_acceleration.z = driver_stim300.getAccZ();
       stim300msg.angular_velocity.x = driver_stim300.getGyroX();
       stim300msg.angular_velocity.y = driver_stim300.getGyroY();
       stim300msg.angular_velocity.z = driver_stim300.getGyroZ();
       imuSensorPublisher.publish(stim300msg);
 
     }
-    // ROS_INFO("No packet");
 
     loop_rate.sleep();
 

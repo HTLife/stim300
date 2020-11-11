@@ -18,8 +18,9 @@ static constexpr uint8_t N_BYTES_STATUS = 1;
 static constexpr uint8_t N_BYTES_TERMINATION = 2;
 static constexpr uint8_t MAX_DATAGRAM_SIZE = 65;
 
-static constexpr double STIM300_GRAVITY = 9.81;
+static constexpr double STIM300_GRAVITY = 9.80665;
 static constexpr double TWO_POWER_14 = 16'384;      // 2^14
+static constexpr double TWO_POWER_19 = 524'288;      // 2^19
 static constexpr double TWO_POWER_20 = 1'048'576;   // 2^20
 static constexpr double TWO_POWER_21 = 2'097'152;   // 2^21
 static constexpr double TWO_POWER_22 = 4'194'304;   // 2^22
@@ -27,8 +28,15 @@ static constexpr double TWO_POWER_24 = 16'777'216;  // 2^24
 static constexpr double TWO_POWER_25 = 33'554'432;  // 2^25
 static constexpr double GYRO_INCR_SCALE = (M_PI / 180.00) / TWO_POWER_21;
 static constexpr double GYRO_SCALE = (M_PI / 180.00) / TWO_POWER_14;
-static constexpr double ACC_SCALE = (STIM300_GRAVITY) / TWO_POWER_20;
+//5g version
+//static constexpr double ACC_SCALE = (STIM300_GRAVITY) / TWO_POWER_20;
+//10g version
+static constexpr double ACC_SCALE = (STIM300_GRAVITY) / TWO_POWER_19;
+//5g version
+//static constexpr double ACC_INCR_SCALE = 1 / TWO_POWER_23;
+//10g version
 static constexpr double ACC_INCR_SCALE = 1 / TWO_POWER_22;
+//both 5g 10g version
 static constexpr double INCL_SCALE = (STIM300_GRAVITY) / TWO_POWER_22;
 static constexpr double INCL_INCR_SCALE = 1 / TWO_POWER_25;
 static constexpr double TEMP_SCALE = 1 / 256.00;
